@@ -16,7 +16,7 @@
     // Returns an objecgt with any properties/methods the component should have
     setup(props) {
       // Variable with base URL for API calls
-      const url = "https://photography-portfolio.herokuapp.com/"
+      const url = "https://photography-portfolio.herokuapp.com/photo/"
       // ref for holding all the photos
       const photos = ref([])
       // method for getting photos
@@ -27,7 +27,7 @@
       }
       // run getPhotos once when component loads
       onMounted(() => getPhotos())
-      // return component propertioes and methods
+      // return component properties and methods
       return {
         photos,
         getPhotos,

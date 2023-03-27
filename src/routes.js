@@ -3,7 +3,7 @@
 /////////////////////////
 import AllPhotos from "./pages/AllPhotos"
 import SinglePhoto from "./pages/SinglePhoto"
-import Form from "./pages/Form"
+import DataForm from "./pages/DataForm"
 
 /////////////////////////
 // Array of Routes
@@ -14,7 +14,7 @@ export default [
     // Page for seeing an individual photo
     { path: "/photo/:id", component: SinglePhoto, name: "photo" },
     // Route for creating a new photo
-    { path: "/new", component: Form },
+    { path: "/new", component: DataForm },
     // Route for updating a photo
-    { path:"/edit", component: Form }
+    { path:"/edit", component: DataForm}
 ]

@@ -1,10 +1,10 @@
 <template>
-    <h1>Form</h1>
+    <h1>DataForm</h1>
 </template>
 
 <script>
     export default {
-        name: "Form"
+        name: "DataForm"
     }
 </script>
 
