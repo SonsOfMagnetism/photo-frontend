@@ -25,7 +25,7 @@
             const photo = photos.value[route.params.id]
             // return properties
             return {
-                photos
+                photo
             }
         }
     }
