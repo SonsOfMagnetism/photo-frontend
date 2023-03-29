@@ -21,9 +21,17 @@
       const photos = ref([])
       // method for getting photos
       const getPhotos = async() => {
-        const response = await fetch(url)
-        const data = await response.json()
-        photos.value = await data
+        try {
+          const response = await fetch(url)
+          if (response.ok) {
+            const data = await response.json()
+            photos.value = data
+          } else {
+            throw new Error(`HTTP error: ${response.status}`)
+          }
+        } catch (error) {
+          console.error(error)
+        }
       }
       // run getPhotos once when component loads
       onMounted(() => getPhotos())

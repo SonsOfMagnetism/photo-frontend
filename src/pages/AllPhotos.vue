@@ -1,10 +1,13 @@
 <template>
     <div>
+        <router-link to="/new"><button>New Photo</button></router-link>
         <div class="photo" v-for="(photo, index) in $attrs.photos" v-bind:key="index">
             <router-link :to="{name: 'photo', params: {id: index}}">
                 <h1>{{ photo.title }}</h1>
             </router-link>
+            <h2>{{ photo.yearTaken }}</h2>
             <h2>{{ photo.location }}</h2>
+            <h2>{{ photo.tags }}</h2>
         </div>
     </div>
 </template>

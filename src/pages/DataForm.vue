@@ -1,7 +1,10 @@
 <template>
+    <router-link to="/"><button>Back to Main</button></router-link>
     <form v-on:submit.prevent="handleSubmit">
-        <input type="text" placeholder="subject" v-model="title"/>
-        <input type="text" placeholder="subject" v-model="location"/>
+        <input type="text" placeholder="Title" v-model="title"/>
+        <input type="number" placeholder="Year Taken" v-model="yearTaken"/>
+        <input type="text" placeholder="Location" v-model="location"/>
+        <input type="text" placeholder="Tags" v-model="tags"/>
         <input type="submit" :value="buttonLabel"/>
     </form>
 </template>
@@ -20,7 +23,9 @@
             const router = useRouter() // get router
             const {photos, url, getPhotos} = toRefs(props) // get photos from props
             const title = ref("") // variable for title in form
-            const location = ref("") // variable fior location in form
+            const yearTaken = ref("") // variable for yearTaken in form
+            const location = ref("") // variable for location in form
+            const tags = ref("") // variable for tags in form
             console.log(url)
             let buttonLabel // label for submit button
             let handleSubmit // variable to hold submit function
@@ -30,7 +35,9 @@
                 const photo = photos.value.find((p) => p.id == route.params.id)
                 // fill the form with that photos values
                 title.value = photo.title
+                yearTaken.value = photo.yearTaken
                 location.value = photo.location
+                tags.value = photo.tags
                 // label for submit button
                 buttonLabel = "edit todo"
                 // define function to update
@@ -42,7 +49,9 @@
                         },
                         body: JSON.stringify({
                             title: title.value,
-                            location: location.value
+                            yearTaken: yearTaken.value,
+                            location: location.value,
+                            tags: tags.value
                         })
                     })
                     getPhotos.value()
@@ -60,7 +69,9 @@
                         },
                         body: JSON.stringify({
                             title: title.value,
-                            location: location.value
+                            yearTaken: yearTaken.value,
+                            location: location.value,
+                            tags: tags.value
                         })
                     })
                     getPhotos.value()
@@ -69,7 +80,9 @@
             }
             return {
                 title,
+                yearTaken,
                 location,
+                tags,
                 handleSubmit,
                 buttonLabel
             }
