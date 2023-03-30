@@ -5,6 +5,7 @@
             <router-link :to="{name: 'photo', params: {id: index}}">
                 <h1>{{ photo.title }}</h1>
             </router-link>
+            <img v-bind:src="photo.image"/>
             <h2>{{ photo.yearTaken }}</h2>
             <h2>{{ photo.location }}</h2>
             <h2>{{ photo.tags }}</h2>

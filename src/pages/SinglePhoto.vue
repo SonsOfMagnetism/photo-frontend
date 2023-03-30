@@ -1,6 +1,7 @@
 <template>
     <div class="photo">
         <h1>{{ photo.title }}</h1>
+        <img v-bind:src="photo.image"/>
         <h2>{{ photo.location }}</h2>
         <h2>{{ photo.yearTaken }}</h2>
         <router-link to="/"><button>Back to Main</button></router-link>
