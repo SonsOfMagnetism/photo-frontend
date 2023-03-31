@@ -2,11 +2,11 @@
     <div class="photo">
         <h1>{{ photo.title }}</h1>
         <img v-bind:src="photo.image"/>
-        <h2>{{ photo.location }}</h2>
-        <h2>{{ photo.yearTaken }}</h2>
-        <router-link to="/"><button>Back to Main</button></router-link>
-        <router-link :to="{name: 'edit', params: {id: photo._id}}"><button>Edit Photo</button></router-link>
-        <button v-on:click="deletePhoto">Delete Photo</button>
+        <h3>{{ photo.location }}</h3>
+        <h3>{{ photo.yearTaken }}</h3>
+        <router-link to="/"><button class="new">Back to Main</button></router-link>
+        <router-link :to="{name: 'edit', params: {id: photo._id}}"><button class="new">Edit Photo</button></router-link>
+        <button class="delete" v-on:click="deletePhoto">Delete Photo</button>
     </div>
 </template>
 
@@ -45,7 +45,14 @@
 </script>
 
 <style>
-    button {
+    .new {
         margin: 10px;
+        background-color: #2A8D5D;
+        border: #2A8D5D;
+    }
+    .delete {
+        margin: 10px;
+        background-color: red;
+        border: red;
     }
 </style>
