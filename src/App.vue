@@ -1,8 +1,9 @@
 <template>
   <div class="app">
     <header>
-      <navbar>
-        <router-link to="/"><span class="title">Vue Photography</span></router-link>
+      <navbar class="container">
+        <router-link to="/"><div class="title">Vue Photography</div></router-link>
+        <router-link to="/new"><button class="new">New Photo</button></router-link>
       </navbar>
     </header>
 
@@ -71,7 +72,6 @@
 
 <style>
   .app {
-    text-align: center;
     background-color: #3C493F;
     color: #A2E3C4;
   }
@@ -83,28 +83,36 @@
   }
   /* Header Styles */
   header {
-    width: 100vw;
     min-height: 100px;
     background-color: #274546d6;
+    padding-top: 15px;
+    margin-bottom: 2em;
+  }
+  /* Navbar Styles */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
   }
   .title {
     color: #A2E3C4;
-    width: 100%;
     font-size: 4rem;
     font-weight: bold;
-    
-  }
+   }
+   .title:hover{
+    text-shadow: #57989afc 2px 2px 3px;
+   }
   /* Footer Styles */
   footer {
-    /* width: 100vw; */
     min-height: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     background-color: #274546d6;
-    /* bottom: 0; */
     margin-top: 2em;
+    text-align: center;
   }
   .github-section {
     display: flex;

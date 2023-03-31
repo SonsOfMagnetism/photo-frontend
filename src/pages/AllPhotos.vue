@@ -1,5 +1,5 @@
 <template>
-    <router-link to="/new"><button class="new">New Photo</button></router-link>
+    
     <div class="photo-container">
         <div class="photo" v-for="(photo, index) in $attrs.photos" v-bind:key="index">
             <router-link :to="{name: 'photo', params: {id: index}}">
@@ -37,9 +37,6 @@
     .photo img {
         width: 350px;
         height: 300px
-    }
-    .new {
-    background-color: #2A8D5D;
     }
 </style>
 
