@@ -16,5 +16,5 @@ export default [
     // Route for creating a new photo
     { path: "/new", component: DataForm },
     // Route for updating a photo
-    { path:"/edit", component: DataForm, name: "edit"}
+    { path:"/edit/:id", component: DataForm, name: "edit"}
 ]

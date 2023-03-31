@@ -34,8 +34,10 @@
             // if edit route setup for editing, if not setup for creating
             if (route.name === "edit") {
                 // get photo to be edited from photos
-                const photo = photos.value.find((p) => p.id == route.params.id)
+                const photo = photos.value.find((p) => p._id == route.params.id)
                 // fill the form with that photos values
+                console.log(photos.value)
+                console.log(photo)
                 title.value = photo.title
                 image.value = photo.image
                 yearTaken.value = photo.yearTaken
@@ -45,7 +47,7 @@
                 buttonLabel = "edit todo"
                 // define function to update
                 handleSubmit = async () => {
-                    await fetch(url.value + photo._id + "/", {
+                    await fetch(url.value + route.params.id + "/", {
                         method: "put",
                         headers: {
                             "Content-Type": "application/json",
