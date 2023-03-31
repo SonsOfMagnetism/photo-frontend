@@ -2,23 +2,24 @@
   <div class="app">
     <header>
       <navbar>
-        
+        <router-link to="/"><span class="title">Vue Photography</span></router-link>
       </navbar>
     </header>
-    <h1>Vue Photography</h1>
+
     <router-view :photos="photos" :url="url" :getPhotos="getPhotos" />
     <footer>
-      <div>
-        <span>Github Repo</span>
-        <a href="https://github.com/SonsOfMagnetism/photography-backend" target="_blank">Backend</a>
-        <a href="https://github.com/SonsOfMagnetism/photo-frontend" target="_blank">Frontend</a>
+      <div class="github-section">
+        <i class="fab fa-github"></i>
+        <i>Github Repo: </i>
+        <a href="https://github.com/SonsOfMagnetism/photography-backend" target="_blank" class="github">Backend</a>
+        <a href="https://github.com/SonsOfMagnetism/photo-frontend" target="_blank" class="github">Frontend</a>
       </div>
       <div>
-        <p>Copyright © 2023 Vue Photography</p>
+        <span>Copyright © 2023 Vue Photography</span>
       </div>
       <div>
         <i>Created By: </i>
-        <a href='https://github.com/SonsOfMagnetism' target='_blank'>Rene Santiago</a>
+        <a href='https://renesantiago.tech/' target='_blank' class="personal">Rene Santiago</a>
       </div>
     </footer>
   </div>
@@ -28,9 +29,11 @@
   import {ref, onMounted} from "vue"; // Import compostion API hooks
   // ref hook allows to create reactive variables
   // onMounted allows code to execute when the component mounts
+  import '@fortawesome/fontawesome-free/css/all.css';
  
   export default {
-    name: 'App',
+    name: 'App', 
+    components: 'GitHubIcon',
     // Setup property allows to use new composition API to define properties/methods
     // Returns an objecgt with any properties/methods the component should have 
     setup(props) {
@@ -72,15 +75,52 @@
     background-color: #3C493F;
     color: #A2E3C4;
   }
-  h1 {
-    color: #2A8D5D;
-  }
   h2 {
     color: #2A8D5D;
   }
   h2:hover {
     color: #A2E3C4;
   }
+  /* Header Styles */
+  header {
+    width: 100vw;
+    min-height: 100px;
+    background-color: #274546d6;
+  }
+  .title {
+    color: #A2E3C4;
+    width: 100%;
+    font-size: 4rem;
+    font-weight: bold;
+    
+  }
+  /* Footer Styles */
+  footer {
+    /* width: 100vw; */
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    background-color: #274546d6;
+    /* bottom: 0; */
+    margin-top: 2em;
+  }
+  .github-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .github {
+    font-weight: bold;
+    color: inherit;
+  }
+  .personal {
+    font-weight: bold;
+    color: inherit;
+  }
+  /* Margin and padding to get rid of white border on page */
   * {
     margin: 0;
     padding: 0;
