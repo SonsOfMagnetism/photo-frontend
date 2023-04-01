@@ -50,7 +50,7 @@
                 location.value = photo.location
                 tags.value = photo.tags
                 // label for submit button
-                buttonLabel = "edit todo"
+                buttonLabel = "edit photo"
                 // define function to update
                 handleSubmit = async () => {
                     await fetch(url.value + route.params.id + "/", {
