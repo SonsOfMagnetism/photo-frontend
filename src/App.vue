@@ -126,6 +126,16 @@
     font-weight: bold;
     color: inherit;
   }
+  @media only screen and (max-width: 600px) {
+        /* For mobile phones: */
+        .container {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+        footer {
+          grid-template-columns: repeat(1, 1fr);
+        }
+    }
   /* Margin and padding to get rid of white border on page */
   * {
     margin: 0;

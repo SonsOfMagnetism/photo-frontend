@@ -38,5 +38,19 @@
         width: 350px;
         height: 300px
     }
+    @media only screen and (max-width: 600px) {
+        /* For mobile phones: */
+        .photo-container {
+        grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    /* @media only screen and (min-width: 600px) {
+        /* For tablets: */
+        /* .photo-container {
+        grid-template-columns: repeat(1, 1fr);
+        }
+    } */
+
 </style>
 
