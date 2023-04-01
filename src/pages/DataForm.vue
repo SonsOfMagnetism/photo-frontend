@@ -1,13 +1,19 @@
 <template>
-    <router-link to="/"><button>Back to Main</button></router-link>
+    <h1 class="formh1">
+        Insert Information Below
+    </h1>
+<div class="row">
+    <div class="column column-33 column-offset-33">
     <form v-on:submit.prevent="handleSubmit">
-        <input type="text" placeholder="Title" v-model="title"/>
+        <input id="formData" type="text" placeholder="Title" v-model="title"/>
         <input type="text" placeholder="URL of image" v-model="image" />
         <input type="number" placeholder="Year Taken" v-model="yearTaken"/>
         <input type="text" placeholder="Location" v-model="location"/>
         <input type="text" placeholder="Tags" v-model="tags"/>
-        <input type="submit" :value="buttonLabel"/>
+        <input id="formButton" type="submit" :value="buttonLabel"/>
     </form>
+    </div>
+</div>
 </template>
 
 <script>
@@ -99,5 +105,25 @@
 </script>
 
 <style>
-
+    #formData:onhover {
+        border: #2A8D5D;
+    }
+    #formButton {
+        background-color: #2A8D5D;
+        border: #2A8D5D;
+        justify-content: center;
+        align-items: center;
+    }
+    .formContainer {
+        /* max-width: 80%; */
+        justify-content: center;
+        align-items: center;
+    }
+    .row {
+        margin-top: 75px;
+    }
+    .formh1 {
+        text-align: center;
+        margin-top: 75px;
+    }
 </style>

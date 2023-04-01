@@ -6,7 +6,6 @@
         <router-link to="/new"><button class="new">New Photo</button></router-link>
       </navbar>
     </header>
-
     <router-view :photos="photos" :url="url" :getPhotos="getPhotos" />
     <footer>
       <div class="github-section">
@@ -93,7 +92,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
   }
   .title {
     color: #A2E3C4;
